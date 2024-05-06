@@ -1,0 +1,135 @@
+.service-container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1920px;
+  margin-top: 70px;
+}
+.service {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+}
+.service-cards {
+  display: flex;
+  /* justify-content: space-between; */
+  width: 100%;
+  padding: 0 20px;
+}
+.service-card {
+  position: relative;
+  width: 600px;
+  min-height: 700px;
+  margin: 0 auto;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: linear-gradient(90deg, rgb(36, 38, 51), rgb(44, 45, 45));
+}
+.muallif-section {
+  padding: 20px;
+}
+.muallif {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.service-title {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #b8b4b4 20%, #fff 80%);
+  background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+}
+.ser-muallif {
+  font-size: 1.6rem;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #000;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #777373, #fff);
+}
+.service-kasb {
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+.ser-hr {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ser-loyiha {
+  color: #ecd905;
+  font-size: 25px;
+}
+.hrs {
+  width: 100%;
+  background: #ecd905;
+  border: none;
+  height: 2px;
+}
+.ustozlar {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  align-content: flex-start;
+}
+.ustozlar .ustoz {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ustoz .ustoz-img {
+  width: 80px;
+  height: 80px;
+}
+.ustoz .ustoz-img img {
+  width: 100%;
+  height: 100%;
+}
+.ustoz-text {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.loyihatext {
+  font-size: 30px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.imgcard {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.service-items{
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    bottom: 0;
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+.service-item{
+    color: #fff;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+.service-icon{
+    color: #ecd905;
+    font-size: 25px;
+}
