@@ -5,6 +5,8 @@ import Img3 from "../../assets/3-min.png"
 import Img4 from "../../assets/4-min.png"
 import Img5 from "../../assets/5-min.png"
 import Img6 from "../../assets/6-min_1.png"
+import Img7 from "../../assets/qop.png"
+import Img8 from "../../assets/blur_2-min.png"
 const About = () => {
 
     const cardData = [
@@ -66,6 +68,8 @@ const About = () => {
                 }
             </div>
         </div>
+            <img src={Img7} alt="" className="about-img1" />
+            <img src={Img8} alt="" className="about-img2" />
     </div>
   )
 }
