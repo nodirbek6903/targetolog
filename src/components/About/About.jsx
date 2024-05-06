@@ -67,6 +67,9 @@ const About = () => {
                     ))
                 }
             </div>
+            <div className="about-btns">
+                <button className="about-btn">Kursga Yozilish</button>
+            </div>
         </div>
             <img src={Img7} alt="" className="about-img1" />
             <img src={Img8} alt="" className="about-img2" />
