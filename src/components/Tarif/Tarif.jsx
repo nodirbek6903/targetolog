@@ -19,6 +19,8 @@ const Tarif = () => {
   const handleCloseModal = () => {
     setSelectedTarif(null);
     setOpenModal(false);
+    setFirstName("")
+    setPhone("")
   };
 
   const handleSubmit = (e) => {

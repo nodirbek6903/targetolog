@@ -2,6 +2,7 @@ import Main from "./components/Main/Main";
 import About from "./components/About/About"
 import Service from "./components/Service/Service";
 import Tarif from "./components/Tarif/Tarif";
+import HomeCard from "./components/HomeCard/HomeCard";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <About />
       <Service />
       <Tarif />
+      <HomeCard />
     </div>
   );
 }
