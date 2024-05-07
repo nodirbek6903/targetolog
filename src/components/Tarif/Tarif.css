@@ -1,0 +1,133 @@
+.tarif-container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.tarifs {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+.tarif-title {
+  background: linear-gradient(135deg, #777373 20%, #fff 80%);
+  background-clip: text;
+  color: transparent;
+  scale: 2;
+  text-align: center;
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.position-img {
+  position: absolute;
+  left: -250px;
+  top: 0;
+}
+.tarif-cards {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  margin-top: 50px;
+}
+.tarif-card {
+  width: 450px;
+  min-height: 700px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 0 auto;
+  gap: 20px;
+  justify-content: space-between;
+  align-content: space-between;
+  background-color: #fff;
+  position: relative;
+  border-radius: 20px;
+}
+.tarif-card-title {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 10px;
+  text-transform: uppercase;
+  font-size: 40px;
+  position: absolute;
+  top: -40px;
+  left: 25px;
+  padding: 30px 0;
+  width: 90%;
+  background: linear-gradient(90deg, rgb(36, 38, 51), rgb(44, 45, 45));
+  border-radius: 10px;
+  margin: 0 auto;
+  letter-spacing: 2px;
+  border: 1px solid #fff;
+}
+.tarif-items-btnlar {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+}
+.tarif-items {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  gap: 30px;
+  padding: 0 10px;
+}
+.tarif-item {
+  font-size: 20px;
+}
+.tarif-icon {
+  color: #ecd905;
+  font-size: 20px;
+  margin-right: 10px;
+}
+.tarif-btns {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.del-text {
+  color: #aaa;
+  font-size: 30px;
+}
+.btns-text1 {
+  font-size: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.btns-text1 .uzs {
+  font-size: 20px;
+}
+.tarif-btn {
+  width: 90%;
+  padding: 30px 0;
+  background: rgb(24, 219, 213);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.btn1 {
+  background: #ecd905;
+}
+.btns-text2 {
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+}

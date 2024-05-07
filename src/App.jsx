@@ -1,6 +1,7 @@
 import Main from "./components/Main/Main";
 import About from "./components/About/About"
 import Service from "./components/Service/Service";
+import Tarif from "./components/Tarif/Tarif";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Main />
       <About />
       <Service />
+      <Tarif />
     </div>
   );
 }
