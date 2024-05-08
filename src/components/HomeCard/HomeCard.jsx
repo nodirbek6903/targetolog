@@ -65,7 +65,7 @@ const HomeCard = () => {
   };
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("9860350106438590");
+    navigator.clipboard.writeText("9860000000000000");
     setIsCopySuccess(true);
     setTimeout(() => setIsCopySuccess(false), 2000);
   };
@@ -143,7 +143,7 @@ const HomeCard = () => {
                 Karta Raqam
               </label>
               <span className="plastik-raqam" onClick={handleCopy}>
-                9860350106438590
+                9860 0000 0000 0000
                 {isCopySuccess ? (
                   <span className="plastik-nusxa">Nusxalandi</span>
                 ) : (
