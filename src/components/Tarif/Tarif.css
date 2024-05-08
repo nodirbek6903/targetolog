@@ -4,6 +4,7 @@
   margin: 0 auto;
   position: relative;
   overflow: hidden;
+  z-index: 99;
 }
 .tarifs {
   display: flex;
@@ -156,7 +157,6 @@
   flex-direction: column;
   justify-content: space-around;
   gap: 20px;
-  /* z-index: 9; */
 }
 
 .modal-title {
