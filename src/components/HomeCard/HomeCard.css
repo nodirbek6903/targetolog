@@ -8,14 +8,14 @@
   width: 80%;
   margin: 0 auto;
   background: linear-gradient(90deg, rgb(36, 38, 51), rgb(44, 45, 45));
-  max-height: 500px;
+  /* max-height: 500px; */
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding: 20px;
   border-radius: 20px;
   position: relative;
-  z-index: -1;
+  /* z-index: -1; */
 }
 .homecard-title {
   font-size: 40px;
@@ -104,4 +104,57 @@
   width: 400px;
   top: 0px;
   height: auto;
+}
+.tarif-select{
+  background: none;
+  font-size: 20px;
+  color: #fff;
+  padding: 20px;
+  cursor: pointer;
+}
+.tarif-select option{
+  color: #000;
+  font-weight: 600;
+}
+.plastik-raqam{
+  color: #fff;
+  letter-spacing: 2px;
+  font-size: 30px;
+  padding: 10px 20px;
+  border: 1px solid #aaa;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.plastik-ism{
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 12px;
+}
+.plastik-nusxa{
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.raqam-label{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+}
+.raqam-label label{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.labels{
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
