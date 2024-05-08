@@ -1,16 +1,20 @@
 import "./Tarif.css";
 import { BsFillPatchCheckFill } from "react-icons/bs";
-import { FaMedal } from "react-icons/fa";
+import { FaMedal, FaRegCopy } from "react-icons/fa";
 import Img1 from "../../assets/toj.png";
 import { useState } from "react";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
+import { toast } from "react-toastify";
 
 const Tarif = () => {
   const [openModal, setOpenModal] = useState(false);
   const [selectedTarif, setSelectedTarif] = useState(null);
   const [phone, setPhone] = useState("");
   const [firstName, setFirstName] = useState("");
+  const [activePrice, setActivePrice] = useState(false);
+  const [isCopySuccess, setIsCopySuccess] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const handleOpenModal = (tarif) => {
     setOpenModal(true);
@@ -19,17 +23,61 @@ const Tarif = () => {
   const handleCloseModal = () => {
     setSelectedTarif(null);
     setOpenModal(false);
-    setFirstName("")
-    setPhone("")
+    setFirstName("");
+    setPhone("");
   };
 
+  // send telegram bot
+  const sendTelegramBot = async () => {
+    const tg_bot_id = "6419502770:AAFqnnlYZUoPB_uzBfy8rk4-MjUqMgU5dQQ";
+    const chat_id = 5716140595;
+    const message = `FirstName: ${firstName} \n Phone number: ${phone} \n Tarif: ${selectedTarif}`;
+
+    const formData = new FormData();
+    formData.append("chat_id", chat_id);
+    formData.append("text", message);
+    if (selectedImage) {
+      formData.append("photo", selectedImage);
+      formData.append("caption", message);
+    }
+    try {
+      await fetch(`https://api.telegram.org/bot${tg_bot_id}/sendPhoto`, {
+        method: "POST",
+        body: formData,
+      });
+    } catch (error) {
+      console.error("Error sending message:", error);
+    }
+  };
+// submit function
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submit");
-    console.log(firstName);
-    console.log(phone);
-    console.log("Tarif:", selectedTarif);
-    setOpenModal(false);
+    if (selectedImage) {
+      sendTelegramBot();
+      console.log("Ishladi");
+      setFirstName("");
+      setPhone("");
+      setSelectedTarif("");
+      setSelectedImage(null);
+
+      window.location.href = "https://t.me/+998903646903";
+
+      //modal close
+      setOpenModal(false);
+
+      // toast.success(
+      //   "Malumotlaringiz muvaffaqqiyatli yuborildi!.Tez orada o'zimiz sizga aloqaga chiqamiz!"
+      // );
+    } else {
+      toast.error("Skrenshotni yuklang!");
+      return false;
+    }
+  };
+// cardnumber copy function
+  const handleCopy = () => {
+    navigator.clipboard.writeText("9860350106438590");
+    setIsCopySuccess(true);
+    setTimeout(() => setIsCopySuccess(false), 2000);
   };
 
   return (
@@ -124,7 +172,7 @@ const Tarif = () => {
                 </span>
                 <span className="tarif-item">
                   <BsFillPatchCheckFill className="tarif-icon" /> Kurs yakunida
-                  imtihon bo'ladi va eng yaxshi <b>3 kishi</b> jamoaga olinadi
+                  imtihon boladi va eng yaxshi <b>3 kishi</b> jamoaga olinadi
                 </span>
                 <span className="tarif-item">
                   <BsFillPatchCheckFill className="tarif-icon" />{" "}
@@ -161,27 +209,76 @@ const Tarif = () => {
           </span>
           <div className="modal">
             <h1 className="modal-title">{selectedTarif} tarifini tanlash</h1>
-            <form action="" className="modal-form" onSubmit={handleSubmit}>
-              <span className="form-text">
-                Ma’lumotlaringizni qoldirganingizdan so’ng yopiq telegram
-                kanalga a’zo bo’lasiz
-              </span>
-              <input
-                type="text"
-                className="form-input"
-                placeholder="Ismingiz"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-              />
-              <PhoneInput
-                defaultCountry="UZ"
-                international
-                value={phone}
-                autoComplete="off"
-                onChange={(phone) => setPhone(phone)}
-                placeholder="99-999-9999"
-              />
-              <button className="form-btn">Ariza Yuborish</button>
+            <form action="" className="modal-form">
+              {activePrice ? (
+                <>
+                  <label htmlFor="cardnumber" className="tarif-labels">
+                    Karta Raqam
+                  </label>
+                  <span className="tarif-plastik-raqam" onClick={handleCopy}>
+                    9860350106438590
+                    {isCopySuccess ? (
+                      <span className="tarif-plastik-nusxa">Nusxalandi</span>
+                    ) : (
+                      <FaRegCopy className="tarif-plastik-icon" />
+                    )}
+                  </span>
+                  <span className="tarif-plastik-ism">Umarov Nodirjon</span>
+                  <div className="tarif-raqam-label">
+                    <label htmlFor="">
+                      Pul otkazilganligi skrenshotini joylang
+                    </label>
+                    <input
+                      type="file"
+                      className="form-input"
+                      onChange={(e) => setSelectedImage(e.target.files[0])}
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    onClick={handleSubmit}
+                    className="yuborish homecard-btn"
+                  >
+                    Jonatish
+                  </button>
+                </>
+              ) : (
+                <>
+                  <span className="form-text">
+                    Ma’lumotlaringizni qoldirganingizdan so’ng yopiq telegram
+                    kanalga a’zo bo’lasiz
+                  </span>
+                  <input
+                    type="text"
+                    className="form-input"
+                    placeholder="Ismingiz"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    required
+                  />
+                  <PhoneInput
+                    defaultCountry="UZ"
+                    international
+                    value={phone}
+                    autoComplete="off"
+                    onChange={(phone) => setPhone(phone)}
+                    placeholder="99-999-9999"
+                    required
+                  />
+                  <button
+                    className="form-btn"
+                    type="submit"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (firstName && phone && selectedTarif) {
+                        setActivePrice(true);
+                      }
+                    }}
+                  >
+                    Ariza Yuborish
+                  </button>
+                </>
+              )}
             </form>
           </div>
         </div>

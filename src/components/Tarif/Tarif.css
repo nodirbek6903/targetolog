@@ -221,3 +221,47 @@
   font-size: 20px;
   text-transform: uppercase;
 }
+
+
+.tarif-plastik-raqam{
+  color: #000;
+  letter-spacing: 2px;
+  font-size: 30px;
+  padding: 10px 20px;
+  border: 1px solid #aaa;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.tarif-plastik-ism{
+  color: #000;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 12px;
+}
+.tarif-plastik-nusxa{
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.tarif-raqam-label{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+}
+.tarif-raqam-label label{
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.tarif-labels{
+  color: #000;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
