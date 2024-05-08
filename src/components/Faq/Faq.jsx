@@ -21,7 +21,7 @@ const Faq = () => {
       id: 3,
       question: "O'quvchilar qanday natijalarga erishishadi?",
       answer:
-        "A nuqta Targetda hech qanday bilim mavjud emas <br/> B nuqta mustaqil daromad qilish",
+        "A nuqta Targetda hech qanday bilim mavjud emas B nuqta mustaqil daromad qilish",
     },
     {
       id: 4,
