@@ -15,6 +15,7 @@
   padding: 20px;
   border-radius: 20px;
   position: relative;
+  z-index: -1;
 }
 .homecard-title {
   font-size: 40px;

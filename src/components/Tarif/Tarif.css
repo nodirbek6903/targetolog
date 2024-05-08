@@ -156,6 +156,7 @@
   flex-direction: column;
   justify-content: space-around;
   gap: 20px;
+  /* z-index: 9; */
 }
 
 .modal-title {
