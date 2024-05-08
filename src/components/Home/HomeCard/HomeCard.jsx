@@ -17,7 +17,8 @@ const HomeCard = () => {
   const [openModal, setOpenModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const [isCopySuccess, setIsCopySuccess] = useState(false);
-  const navigate = useNavigate()
+  const [selectedCardNumber, setSelectedCardNumber] = useState(null);
+  const navigate = useNavigate();
 
   const sendTelegramBot = async () => {
     const tg_bot_id = "6419502770:AAFqnnlYZUoPB_uzBfy8rk4-MjUqMgU5dQQ";
@@ -48,11 +49,9 @@ const HomeCard = () => {
         setSelectedImage(null);
 
         setOpenModal(false);
-        toast.success(
-          "Malumotlaringiz muvaffaqqiyatli yuborildi!"
-        );
-      }else{
-        toast.error("Xatolik yuz berdi! Iltimos qaytadan urinib ko'ring!")
+        toast.success("Malumotlaringiz muvaffaqqiyatli yuborildi!");
+      } else {
+        toast.error("Xatolik yuz berdi! Iltimos qaytadan urinib ko'ring!");
       }
     } catch (error) {
       console.error("Error sending message:", error);
@@ -63,15 +62,23 @@ const HomeCard = () => {
     e.preventDefault();
     if (selectedImage) {
       sendTelegramBot();
-      navigate("/tolov")
+      navigate("/tolov");
     } else {
       toast.error("Skrenshotni yuklang!");
       return false;
     }
   };
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText("9860000000000000");
+  // Humo karta raqamini nusxalash uchun funksiya
+  const handleCopyHumo = () => {
+    navigator.clipboard.writeText("9860176606994307");
+    setIsCopySuccess(true);
+    setTimeout(() => setIsCopySuccess(false), 2000);
+  };
+
+  // Uzcard karta raqamini nusxalash uchun funksiya
+  const handleCopyUzcard = () => {
+    navigator.clipboard.writeText("8600140436177522");
     setIsCopySuccess(true);
     setTimeout(() => setIsCopySuccess(false), 2000);
   };
@@ -148,15 +155,49 @@ const HomeCard = () => {
               <label htmlFor="cardnumber" className="labels">
                 Karta Raqam
               </label>
-              <span className="plastik-raqam" onClick={handleCopy}>
-                9860 0000 0000 0000
-                {isCopySuccess ? (
-                  <span className="plastik-nusxa">Nusxalandi</span>
-                ) : (
-                  <FaRegCopy className="plastik-icon" />
-                )}
-              </span>
-              <span className="plastik-ism">Umarov Nodirjon</span>
+              <select
+                name="cardnumber"
+                value={selectedCardNumber}
+                onChange={(e) => setSelectedCardNumber(e.target.value)}
+                id=""
+                className="homecard-form-select"
+              >
+                <option value="tanlash">Karta raqamni tanlang</option>
+                <option value="humo">Humo</option>
+                <option value="uzcard">Uzcard</option>
+              </select>
+              {selectedCardNumber === "humo" && (
+                <>
+                  <span
+                    className="plastik-raqam"
+                    onClick={handleCopyHumo}
+                  >
+                    9860176606994307
+                    {isCopySuccess ? (
+                      <span className="plastik-nusxa">Nusxalandi</span>
+                    ) : (
+                      <FaRegCopy className="plastik-icon" />
+                    )}
+                  </span>
+                  <span className="plastik-ism">{`Kamol To'ymurodov`}</span>
+                </>
+              )}
+              {selectedCardNumber === "uzcard" && (
+                <>
+                  <span
+                    className="plastik-raqam"
+                    onClick={handleCopyUzcard}
+                  >
+                    8600140436177522
+                    {isCopySuccess ? (
+                      <span className="plastik-nusxa">Nusxalandi</span>
+                    ) : (
+                      <FaRegCopy className="plastik-icon" />
+                    )}
+                  </span>
+                  <span className="plastik-ism">{`Kamol To'ymurodov`}</span>
+                </>
+              )}
               <div className="raqam-label">
                 <label htmlFor="">
                   Pul otkazilganligi skrenshotini joylang

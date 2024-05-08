@@ -82,7 +82,6 @@ const Tarif = () => {
       return false;
     }
   };
-  // cardnumber copy function
   // Humo karta raqamini nusxalash uchun funksiya
   const handleCopyHumo = () => {
     navigator.clipboard.writeText("9860176606994307");
@@ -259,7 +258,7 @@ const Tarif = () => {
                           <FaRegCopy className="tarif-plastik-icon" />
                         )}
                       </span>
-                      <span className="tarif-plastik-ism">Umarov Nodirjon</span>
+                      <span className="tarif-plastik-ism">{`Kamol To'ymurodov`}</span>
                     </>
                   )}
                   {selectedCardNumber === "uzcard" && (
@@ -277,7 +276,7 @@ const Tarif = () => {
                           <FaRegCopy className="tarif-plastik-icon" />
                         )}
                       </span>
-                      <span className="tarif-plastik-ism">Umarov Nodirjon</span>
+                      <span className="tarif-plastik-ism">{`Kamol To'ymurodov`}</span>
                     </>
                   )}
                   <div className="tarif-raqam-label">
