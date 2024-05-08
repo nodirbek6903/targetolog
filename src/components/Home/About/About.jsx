@@ -68,7 +68,7 @@ const About = () => {
                 }
             </div>
             <div className="about-btns">
-                <button className="about-btn">Kursga Yozilish</button>
+                <a href="#kurstarif" className="about-btn">Kursga Yozilish</a>
             </div>
         </div>
             <img src={Img7} alt="" className="about-img1" />

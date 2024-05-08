@@ -97,7 +97,7 @@ const Tarif = () => {
   };
 
   return (
-    <div className="tarif-container">
+    <div className="tarif-container" id="kurstarif">
       <img src={Img1} className="position-img" alt="" />
       <div className="tarifs">
         <h1 className="tarif-title">{`Ta'riflar`}</h1>

@@ -52,7 +52,7 @@ const Main = () => {
             <span className="kasb">PROFESSIONAL TARGETOLOG</span>
         </div>
         <div className="reg-btns">
-            <button className="reg-btn">INDIVIDUALGA RO’YHATDAN O’TISH</button>
+            <a href="#kurstarif" className="reg-btn">INDIVIDUALGA RO’YHATDAN O’TISH</a>
             <span className="btn-text">{`Ma’lumotlaringizni qoldirganingizdan so’ng mutaxasisslarimiz siz bilan bog'lanishadi`}</span>
         </div>
       </div>
