@@ -272,6 +272,8 @@ const Tarif = () => {
                       e.preventDefault();
                       if (firstName && phone && selectedTarif) {
                         setActivePrice(true);
+                      }else{
+                        toast.error("Ma'lumotlarni to'ldiring!");
                       }
                     }}
                   >
