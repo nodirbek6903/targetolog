@@ -8,6 +8,8 @@ import Bg from "../../assets/blur_2-min.png";
 import { FaRegCopy } from "react-icons/fa";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+
 const HomeCard = () => {
   const [firstName, setFirstName] = useState("");
   const [phone, setPhone] = useState("");
@@ -40,16 +42,26 @@ const HomeCard = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    sendTelegramBot();
-    console.log("Ishladi");
-    setFirstName("");
-    setPhone("");
-    setSelectedTarif("");
-    setSelectedImage(null);
-    setOpenModal(false);
-    toast.success(
-      "Malumotlaringiz muvaffaqqiyatli yuborildi!.Tez orada o'zimiz sizga aloqaga chiqamiz!"
-    );
+    if (selectedImage) {
+      sendTelegramBot();
+      console.log("Ishladi");
+      setFirstName("");
+      setPhone("");
+      setSelectedTarif("");
+      setSelectedImage(null);
+      
+      window.location.href = "https://t.me/+998903646903"
+
+      //modal close
+      setOpenModal(false);
+      
+      toast.success(
+        "Malumotlaringiz muvaffaqqiyatli yuborildi!.Tez orada o'zimiz sizga aloqaga chiqamiz!"
+      );
+    } else {
+      toast.error("Skrenshotni yuklang!");
+      return false;
+    }
   };
 
   const handleCopy = () => {
@@ -80,6 +92,7 @@ const HomeCard = () => {
                 placeholder="Ismingiz"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
+                required
               />
               <label htmlFor="phonenumber" className="labels">
                 Telefon Nomer
@@ -91,6 +104,7 @@ const HomeCard = () => {
                 autoComplete="off"
                 onChange={(phone) => setPhone(phone)}
                 placeholder="99-999-9999"
+                required
               />
               <label htmlFor="tarif" className="labels">
                 Tarifni tanlang
@@ -112,7 +126,11 @@ const HomeCard = () => {
               <button
                 onClick={(e) => {
                   e.preventDefault();
-                  setOpenModal(true);
+                  if (firstName && phone && selectedTarif) {
+                    setOpenModal(true);
+                  } else {
+                    toast.error("Barcha maydonlarni to'ldiring");
+                  }
                 }}
                 className="homecard-btn"
               >
