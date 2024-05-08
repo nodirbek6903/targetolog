@@ -16,7 +16,8 @@ const Tarif = () => {
   const [activePrice, setActivePrice] = useState(false);
   const [isCopySuccess, setIsCopySuccess] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
-  const navigate = useNavigate()
+  const [selectedCardNumber, setSelectedCardNumber] = useState(null);
+  const navigate = useNavigate();
 
   const handleOpenModal = (tarif) => {
     setOpenModal(true);
@@ -28,7 +29,7 @@ const Tarif = () => {
     setOpenModal(false);
     setFirstName("");
     setPhone("");
-    setActivePrice(false)
+    setActivePrice(false);
   };
 
   // send telegram bot
@@ -61,31 +62,37 @@ const Tarif = () => {
         setSelectedImage(null);
 
         setOpenModal(false);
-        setActivePrice(false)
-        toast.success(
-          "Malumotlaringiz muvaffaqqiyatli yuborildi!"
-        );
-      }else{
-        toast.error("Xatolik yuz berdi! Iltimos qaytadan urinib ko'ring!")
+        setActivePrice(false);
+        toast.success("Malumotlaringiz muvaffaqqiyatli yuborildi!");
+      } else {
+        toast.error("Xatolik yuz berdi! Iltimos qaytadan urinib ko'ring!");
       }
     } catch (error) {
       console.error("Error sending message:", error);
     }
   };
-// submit qismi
+  // submit qismi
   const handleSubmit = (e) => {
     e.preventDefault();
     if (selectedImage) {
       sendTelegramBot();
-      navigate("/tolov")
+      navigate("/tolov");
     } else {
       toast.error("Skrenshotni yuklang!");
       return false;
     }
   };
-// cardnumber copy function
-  const handleCopy = () => {
-    navigator.clipboard.writeText("9860000000000000");
+  // cardnumber copy function
+  // Humo karta raqamini nusxalash uchun funksiya
+  const handleCopyHumo = () => {
+    navigator.clipboard.writeText("9860176606994307");
+    setIsCopySuccess(true);
+    setTimeout(() => setIsCopySuccess(false), 2000);
+  };
+
+  // Uzcard karta raqamini nusxalash uchun funksiya
+  const handleCopyUzcard = () => {
+    navigator.clipboard.writeText("8600140436177522");
     setIsCopySuccess(true);
     setTimeout(() => setIsCopySuccess(false), 2000);
   };
@@ -225,15 +232,54 @@ const Tarif = () => {
                   <label htmlFor="cardnumber" className="tarif-labels">
                     Karta Raqam
                   </label>
-                  <span className="tarif-plastik-raqam" onClick={handleCopy}>
-                    9860 0000 0000 0000
-                    {isCopySuccess ? (
-                      <span className="tarif-plastik-nusxa">Nusxalandi</span>
-                    ) : (
-                      <FaRegCopy className="tarif-plastik-icon" />
-                    )}
-                  </span>
-                  <span className="tarif-plastik-ism">Umarov Nodirjon</span>
+                  <select
+                    name="cardnumber"
+                    value={selectedCardNumber}
+                    onChange={(e) => setSelectedCardNumber(e.target.value)}
+                    id=""
+                    className="tarif-form-select"
+                  >
+                    <option value="tanlash">Karta raqamni tanlang</option>
+                    <option value="humo">Humo</option>
+                    <option value="uzcard">Uzcard</option>
+                  </select>
+
+                  {selectedCardNumber === "humo" && (
+                    <>
+                      <span
+                        className="tarif-plastik-raqam"
+                        onClick={handleCopyHumo}
+                      >
+                        9860176606994307
+                        {isCopySuccess ? (
+                          <span className="tarif-plastik-nusxa">
+                            Nusxalandi
+                          </span>
+                        ) : (
+                          <FaRegCopy className="tarif-plastik-icon" />
+                        )}
+                      </span>
+                      <span className="tarif-plastik-ism">Umarov Nodirjon</span>
+                    </>
+                  )}
+                  {selectedCardNumber === "uzcard" && (
+                    <>
+                      <span
+                        className="tarif-plastik-raqam"
+                        onClick={handleCopyUzcard}
+                      >
+                        8600140436177522
+                        {isCopySuccess ? (
+                          <span className="tarif-plastik-nusxa">
+                            Nusxalandi
+                          </span>
+                        ) : (
+                          <FaRegCopy className="tarif-plastik-icon" />
+                        )}
+                      </span>
+                      <span className="tarif-plastik-ism">Umarov Nodirjon</span>
+                    </>
+                  )}
                   <div className="tarif-raqam-label">
                     <label htmlFor="">
                       Pul otkazilganligi skrenshotini joylang
@@ -282,7 +328,7 @@ const Tarif = () => {
                       e.preventDefault();
                       if (firstName && phone && selectedTarif) {
                         setActivePrice(true);
-                      }else{
+                      } else {
                         toast.error("Ma'lumotlarni to'ldiring!");
                       }
                     }}

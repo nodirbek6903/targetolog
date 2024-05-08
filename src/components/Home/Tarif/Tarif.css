@@ -221,7 +221,15 @@
   font-size: 20px;
   text-transform: uppercase;
 }
-
+.tarif-form-select{
+  padding: 20px;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+}
 
 .tarif-plastik-raqam{
   color: #000;
