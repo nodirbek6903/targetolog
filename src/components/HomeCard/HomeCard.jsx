@@ -6,6 +6,8 @@ import PhoneImg from "../../assets/phone.png";
 import BookImg from "../../assets/book.png";
 import Bg from "../../assets/blur_2-min.png";
 import { FaRegCopy } from "react-icons/fa";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const HomeCard = () => {
   const [firstName, setFirstName] = useState("");
   const [phone, setPhone] = useState("");
@@ -45,6 +47,9 @@ const HomeCard = () => {
     setSelectedTarif("");
     setSelectedImage(null);
     setOpenModal(false);
+    toast.success(
+      "Malumotlaringiz muvaffaqqiyatli yuborildi!.Tez orada o'zimiz sizga aloqaga chiqamiz!"
+    );
   };
 
   const handleCopy = () => {
@@ -120,10 +125,12 @@ const HomeCard = () => {
                 Karta Raqam
               </label>
               <span className="plastik-raqam" onClick={handleCopy}>
-              9860350106438590
+                9860350106438590
                 {isCopySuccess ? (
                   <span className="plastik-nusxa">Nusxalandi</span>
-                ) : <FaRegCopy className="plastik-icon" />}
+                ) : (
+                  <FaRegCopy className="plastik-icon" />
+                )}
               </span>
               <span className="plastik-ism">Umarov Nodirjon</span>
               <div className="raqam-label">
