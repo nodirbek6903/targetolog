@@ -8,6 +8,7 @@ import Bg from "../../../assets/blur_2-min.png";
 import { FaRegCopy } from "react-icons/fa";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 const HomeCard = () => {
   const [firstName, setFirstName] = useState("");
@@ -16,6 +17,7 @@ const HomeCard = () => {
   const [openModal, setOpenModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const [isCopySuccess, setIsCopySuccess] = useState(false);
+  const navigate = useNavigate()
 
   const sendTelegramBot = async () => {
     const tg_bot_id = "6419502770:AAFqnnlYZUoPB_uzBfy8rk4-MjUqMgU5dQQ";
@@ -47,7 +49,7 @@ const HomeCard = () => {
 
         setOpenModal(false);
         toast.success(
-          "Malumotlaringiz muvaffaqqiyatli yuborildi!.Tez orada o'zimiz sizga aloqaga chiqamiz!"
+          "Malumotlaringiz muvaffaqqiyatli yuborildi!"
         );
       }else{
         toast.error("Xatolik yuz berdi! Iltimos qaytadan urinib ko'ring!")
@@ -61,6 +63,7 @@ const HomeCard = () => {
     e.preventDefault();
     if (selectedImage) {
       sendTelegramBot();
+      navigate("/tolov")
     } else {
       toast.error("Skrenshotni yuklang!");
       return false;

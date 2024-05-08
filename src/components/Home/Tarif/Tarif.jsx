@@ -6,6 +6,7 @@ import { useState } from "react";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Tarif = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -15,6 +16,7 @@ const Tarif = () => {
   const [activePrice, setActivePrice] = useState(false);
   const [isCopySuccess, setIsCopySuccess] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const navigate = useNavigate()
 
   const handleOpenModal = (tarif) => {
     setOpenModal(true);
@@ -26,6 +28,7 @@ const Tarif = () => {
     setOpenModal(false);
     setFirstName("");
     setPhone("");
+    setActivePrice(false)
   };
 
   // send telegram bot
@@ -60,7 +63,7 @@ const Tarif = () => {
         setOpenModal(false);
         setActivePrice(false)
         toast.success(
-          "Malumotlaringiz muvaffaqqiyatli yuborildi!.Tez orada o'zimiz sizga aloqaga chiqamiz!"
+          "Malumotlaringiz muvaffaqqiyatli yuborildi!"
         );
       }else{
         toast.error("Xatolik yuz berdi! Iltimos qaytadan urinib ko'ring!")
@@ -74,6 +77,7 @@ const Tarif = () => {
     e.preventDefault();
     if (selectedImage) {
       sendTelegramBot();
+      navigate("/tolov")
     } else {
       toast.error("Skrenshotni yuklang!");
       return false;
