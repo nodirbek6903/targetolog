@@ -20,6 +20,7 @@ const Tarif = () => {
     setOpenModal(true);
     setSelectedTarif(tarif);
   };
+  // close modal
   const handleCloseModal = () => {
     setSelectedTarif(null);
     setOpenModal(false);
