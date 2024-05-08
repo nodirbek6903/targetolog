@@ -1,7 +1,7 @@
 import "./Tarif.css";
 import { BsFillPatchCheckFill } from "react-icons/bs";
 import { FaMedal, FaRegCopy } from "react-icons/fa";
-import Img1 from "../../assets/toj.png";
+import Img1 from "../../../assets/toj.png";
 import { useState } from "react";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
@@ -42,33 +42,38 @@ const Tarif = () => {
       formData.append("caption", message);
     }
     try {
-      await fetch(`https://api.telegram.org/bot${tg_bot_id}/sendPhoto`, {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        `https://api.telegram.org/bot${tg_bot_id}/sendPhoto`,
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      if (response.ok) {
+        console.log("Ishladi");
+        setFirstName("");
+        setPhone("");
+        setSelectedTarif("");
+        setSelectedImage(null);
+
+        setOpenModal(false);
+        setActivePrice(false)
+        toast.success(
+          "Malumotlaringiz muvaffaqqiyatli yuborildi!.Tez orada o'zimiz sizga aloqaga chiqamiz!"
+        );
+      }else{
+        toast.error("Xatolik yuz berdi! Iltimos qaytadan urinib ko'ring!")
+      }
     } catch (error) {
       console.error("Error sending message:", error);
     }
   };
-// submit function
+// submit qismi
   const handleSubmit = (e) => {
     e.preventDefault();
     if (selectedImage) {
       sendTelegramBot();
-      console.log("Ishladi");
-      setFirstName("");
-      setPhone("");
-      setSelectedTarif("");
-      setSelectedImage(null);
-
-      window.location.href = "https://t.me/+998903646903";
-
-      //modal close
-      setOpenModal(false);
-
-      // toast.success(
-      //   "Malumotlaringiz muvaffaqqiyatli yuborildi!.Tez orada o'zimiz sizga aloqaga chiqamiz!"
-      // );
     } else {
       toast.error("Skrenshotni yuklang!");
       return false;

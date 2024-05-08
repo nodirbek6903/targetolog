@@ -1,21 +1,16 @@
-import Main from "./components/Main/Main";
-import About from "./components/About/About"
-import Service from "./components/Service/Service";
-import Tarif from "./components/Tarif/Tarif";
-import HomeCard from "./components/HomeCard/HomeCard";
-import Faq from "./components/Faq/Faq";
+import {Routes,Route} from "react-router-dom"
 import { ToastContainer } from "react-toastify";
+import Home from "./components/Home/Home";
+import Tolov from "./components/Tolov/Tolov"
 
 function App() {
   return (
     <div className="container">
       <ToastContainer />
-      <Main />
-      <About />
-      <Service />
-      <Tarif />
-      <HomeCard />
-      <Faq />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/tolov" element={<Tolov />} />
+    </Routes>
     </div>
   );
 }

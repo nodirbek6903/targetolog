@@ -1,12 +1,12 @@
 import "./Service.css";
-import Img1 from "../../assets/muallif1.png";
-import Img2 from "../../assets/muallif2.png";
-import Img3 from "../../assets/muallif3.png";
-import Img4 from "../../assets/muallif4.png";
-import Img5 from "../../assets/muallif5.png";
-import Img6 from "../../assets/muallif6.png";
-import Img7 from "../../assets/muallif7.png";
-import Imgcard from "../../assets/asosiy.png"
+import Img1 from "../../../assets/muallif1.png";
+import Img2 from "../../../assets/muallif2.png";
+import Img3 from "../../../assets/muallif3.png";
+import Img4 from "../../../assets/muallif4.png";
+import Img5 from "../../../assets/muallif5.png";
+import Img6 from "../../../assets/muallif6.png";
+import Img7 from "../../../assets/muallif7.png";
+import Imgcard from "../../../assets/asosiy.png"
 import { BsFillPatchCheckFill } from "react-icons/bs";
 
 const Service = () => {

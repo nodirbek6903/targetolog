@@ -2,13 +2,12 @@ import { useState } from "react";
 import "./HomeCard.css";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
-import PhoneImg from "../../assets/phone.png";
-import BookImg from "../../assets/book.png";
-import Bg from "../../assets/blur_2-min.png";
+import PhoneImg from "../../../assets/phone.png";
+import BookImg from "../../../assets/book.png";
+import Bg from "../../../assets/blur_2-min.png";
 import { FaRegCopy } from "react-icons/fa";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 
 const HomeCard = () => {
   const [firstName, setFirstName] = useState("");
@@ -31,10 +30,28 @@ const HomeCard = () => {
       formData.append("caption", message);
     }
     try {
-      await fetch(`https://api.telegram.org/bot${tg_bot_id}/sendPhoto`, {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        `https://api.telegram.org/bot${tg_bot_id}/sendPhoto`,
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      if (response.ok) {
+        console.log("Ishladi");
+        setFirstName("");
+        setPhone("");
+        setSelectedTarif("");
+        setSelectedImage(null);
+
+        setOpenModal(false);
+        toast.success(
+          "Malumotlaringiz muvaffaqqiyatli yuborildi!.Tez orada o'zimiz sizga aloqaga chiqamiz!"
+        );
+      }else{
+        toast.error("Xatolik yuz berdi! Iltimos qaytadan urinib ko'ring!")
+      }
     } catch (error) {
       console.error("Error sending message:", error);
     }
@@ -44,20 +61,6 @@ const HomeCard = () => {
     e.preventDefault();
     if (selectedImage) {
       sendTelegramBot();
-      console.log("Ishladi");
-      setFirstName("");
-      setPhone("");
-      setSelectedTarif("");
-      setSelectedImage(null);
-      
-      window.location.href = "https://t.me/+998903646903"
-
-      //modal close
-      setOpenModal(false);
-      
-      toast.success(
-        "Malumotlaringiz muvaffaqqiyatli yuborildi!.Tez orada o'zimiz sizga aloqaga chiqamiz!"
-      );
     } else {
       toast.error("Skrenshotni yuklang!");
       return false;
@@ -117,7 +120,7 @@ const HomeCard = () => {
                 id="tariflar"
                 required="true"
               >
-                <option value="---">---</option>
+                <option value="tanlash">Tarifni tanlang</option>
                 <option value="standart" defaultValue="standart">
                   Standart
                 </option>

@@ -1,7 +1,7 @@
 import "./Main.css";
-import Img1 from "../../assets/soat.png";
-import Img2 from "../../assets/toj.png";
-import Img3 from "../../assets/karnay.png";
+import Img1 from "../../../assets/soat.png";
+import Img2 from "../../../assets/toj.png";
+import Img3 from "../../../assets/karnay.png";
 import { HiOutlineSpeakerphone } from "react-icons/hi";
 import { PiCalendarCheckDuotone } from "react-icons/pi";
 const Main = () => {
@@ -23,9 +23,6 @@ const Main = () => {
             </b>
           </span>
         </div>
-        {/* <div className="main-img">
-          <img className="images" src={Img1} alt="" />
-        </div> */}
         <div className="card2">
           <div className="card-titles">
             <h1 className="main-title2">

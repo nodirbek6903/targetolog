@@ -15,7 +15,7 @@
   width: 100%;
   background: #000;
   height: 100vh;
-  background-image: url("../../assets//main.png"), url("../../assets/bg.png");
+  background-image: url("../../../assets//main.png"), url("../../../assets/bg.png");
   background-size: contain contain;
   background-position: top center;
   background-size: auto auto;
