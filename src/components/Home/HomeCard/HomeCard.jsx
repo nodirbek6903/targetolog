@@ -23,7 +23,16 @@ const HomeCard = () => {
   const sendTelegramBot = async () => {
     const tg_bot_id = "6419502770:AAFqnnlYZUoPB_uzBfy8rk4-MjUqMgU5dQQ";
     const chat_id = 5716140595;
-    const message = `FirstName: ${firstName} \n Phone number: ${phone} \n Tarif: ${selectedTarif}`;
+    let message = `FirstName: ${firstName} \n Phone number: ${phone} \n Tarif: ${selectedTarif}`;
+
+    if (selectedCardNumber === "humo") {
+      message += `\n Karta raqami: 9860176606994307`;
+    } else if (selectedCardNumber === "uzcard") {
+      message += `\n Karta raqami: 8600140436177522`;
+    } else {
+      toast.error("Karta raqamini tanlang!");
+      return false;
+    }
 
     const formData = new FormData();
     formData.append("chat_id", chat_id);
@@ -60,12 +69,17 @@ const HomeCard = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (selectedImage) {
+    if (selectedImage && selectedCardNumber) {
       sendTelegramBot();
       navigate("/tolov");
-    } else {
+    } else if (selectedImage && !selectedCardNumber) {
+      toast.error("Karta raqamini tanlang!");
+      return false;
+    } else if (!selectedImage) {
       toast.error("Skrenshotni yuklang!");
       return false;
+    } else {
+      toast.error("Malumotlarni to'ldiring!");
     }
   };
 
@@ -169,10 +183,7 @@ const HomeCard = () => {
               </select>
               {selectedCardNumber === "humo" && (
                 <>
-                  <span
-                    className="plastik-raqam"
-                    onClick={handleCopyHumo}
-                  >
+                  <span className="plastik-raqam" onClick={handleCopyHumo}>
                     9860176606994307
                     {isCopySuccess ? (
                       <span className="plastik-nusxa">Nusxalandi</span>
@@ -185,10 +196,7 @@ const HomeCard = () => {
               )}
               {selectedCardNumber === "uzcard" && (
                 <>
-                  <span
-                    className="plastik-raqam"
-                    onClick={handleCopyUzcard}
-                  >
+                  <span className="plastik-raqam" onClick={handleCopyUzcard}>
                     8600140436177522
                     {isCopySuccess ? (
                       <span className="plastik-nusxa">Nusxalandi</span>
