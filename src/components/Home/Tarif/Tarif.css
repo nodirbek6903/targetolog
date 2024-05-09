@@ -113,8 +113,9 @@
 }
 .tarif-btn {
   width: 90%;
-  padding: 30px 0;
-  background: rgb(24, 219, 213);
+  padding: 40px 0;
+  background: #9163E7;
+  /* opacity: 0.8; */
   color: #fff;
   font-size: 20px;
   font-weight: 600;
@@ -124,7 +125,8 @@
   text-transform: uppercase;
 }
 .btn1 {
-  background: #ecd905;
+  background: #FADA0A;
+  color: #000;
 }
 .btns-text2 {
   font-size: 20px;
@@ -211,7 +213,7 @@
 
 }
 .form-btn {
-  background-color: #ecd905;
+  background-color: #FADA0A;
   color: #000;
   font-weight: bold;
   border: none;
