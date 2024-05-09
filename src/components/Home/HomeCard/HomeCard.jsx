@@ -108,7 +108,7 @@ const HomeCard = () => {
                 required
               />
               <label htmlFor="phonenumber" className="labels">
-                Telefon Nomer
+                Phone Number
               </label>
               <PhoneInput
                 defaultCountry="UZ"
