@@ -309,6 +309,7 @@ const Tarif = () => {
                     placeholder="Ismingiz"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
+                    
                     required
                   />
                   <PhoneInput
@@ -318,6 +319,7 @@ const Tarif = () => {
                     autoComplete="off"
                     onChange={(phone) => setPhone(phone)}
                     placeholder="99-999-9999"
+                    countryCallingCodeEditable={false}
                     required
                   />
                   <button
