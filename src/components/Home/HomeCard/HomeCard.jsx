@@ -117,6 +117,7 @@ const HomeCard = () => {
                 autoComplete="off"
                 onChange={(phone) => setPhone(phone)}
                 placeholder="99-999-9999"
+                countryCallingCodeEditable={false}
                 required
               />
               <label htmlFor="tarif" className="labels">
