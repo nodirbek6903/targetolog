@@ -1,59 +1,55 @@
 import "./Main.css";
-import Img1 from "../../../assets/soat.png";
-import Img2 from "../../../assets/toj.png";
-import Img3 from "../../../assets/karnay.png";
+import Odam from "../../../assets//main.png";
+import Bg from "../../../assets/bg.png";
 import { HiOutlineSpeakerphone } from "react-icons/hi";
 import { PiCalendarCheckDuotone } from "react-icons/pi";
 const Main = () => {
   return (
     <div className="main-container">
       <div className="mains">
-        <img src={Img1} className="main-soat" alt="" />
-        <img src={Img3} className="main-karnay" alt="" />
-        <div className="card1">
-          <h1 className="main-title">Target</h1>
-          <span className="main-text1">
-            <b className="main-bold">Targeting</b> - Ijitimoiy tarmoqlar,
-            xususan,{" "}
-            <b className="main-bold">Instagram va Facebook’da reklamani</b>{" "}
-            ishga tushirish va <b className="main-bold">biznesga</b> mijozlar
-            oqimini yaratish bo’yicha{" "}
-            <b className="main-bold">
-              0 dan mutaxassis darajasigacha o’rgatiladigan kurs
-            </b>
-          </span>
-        </div>
-        <div className="card2">
-          <div className="card-titles">
-            <h1 className="main-title2">
-              0 dan <b className="pro">Pro</b> <br /> darajagacha
-            </h1>
-            <img src={Img2} alt="" className="main-toj" />
-          </div>
-          <div className="kardlar">
-            <div className="kard">
-              <span className="kard-text">
-                Individual <b className="kard-bold">Target online</b> kursi
+        <img src={Bg} className="main-bg-image" alt="" />
+        <div className="main-card1">
+          <div className="card1-cards">
+            <div className="card1-card">
+              <HiOutlineSpeakerphone className="main-icons" />
+              <span className="card1-text">
+                Individual <b>Target online</b> kursi
               </span>
-              <HiOutlineSpeakerphone className="kard-icon" />
             </div>
-            <div className="kard">
-              <span className="kard-text">
-                Kurs boshlanishi sanasi <b className="kard-bold">15-mart</b>
+            <div className="card1-card">
+              <PiCalendarCheckDuotone className="main-icons" />
+              <span className="card1-text">
+                Kurs boshlanishi sanasi <b>15-mart</b>
               </span>
-              <PiCalendarCheckDuotone className="kard-icon" />
             </div>
           </div>
+          <div className="card2-cards">
+            <div className="card2-card">
+              <h1 className="text-pro">
+                Targeting <span className="text-underline">0 dan pro</span>{" "}
+                darajagacha
+              </h1>
+              <span className="card2-text1">Onlayn + Individual kurs</span>
+              <del className="del-text">{`2,000,000 so'm`}</del>
+              <span className="card2-text2">{`400,000 so'm`}</span>
+            </div>
+          </div>
+          <div className="card3-cards main-btns">
+            <a href="#kurstarif" className="main-btn">
+              {`Ro'yhatdan o'tish`}
+            </a>
+            <span className="main-btn-text">
+              {`Ma’lumotlaringizni qoldirganingizdan so’ng mutaxasisslarimiz siz
+              bilan bog'lanishadi`}
+            </span>
+          </div>
         </div>
-      </div>
-      <div className="registr">
-        <div className="reg-texts">
-            <h1 className="reg-name">{`Kamol To'ymurodov`}</h1>
-            <span className="kasb">PROFESSIONAL TARGETOLOG</span>
-        </div>
-        <div className="reg-btns">
-            <a href="#kurstarif" className="reg-btn">INDIVIDUALGA RO’YHATDAN O’TISH</a>
-            <span className="btn-text">{`Ma’lumotlaringizni qoldirganingizdan so’ng mutaxasisslarimiz siz bilan bog'lanishadi`}</span>
+        <div className="main-card2">
+          <img src={Odam} className="odam-img" alt="" />
+          <div className="main-card2-texts">
+            <span className="imgcard-text1">{`Kamol To'ymurodov`}</span>
+            <span className="imgcard-text2">Professional Targetolog</span>
+          </div>
         </div>
       </div>
     </div>
