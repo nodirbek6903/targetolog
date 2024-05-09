@@ -30,7 +30,7 @@ const Main = () => {
                 darajagacha
               </h1>
               <span className="card2-text1">Onlayn + Individual kurs</span>
-              <del className="del-text">{`2,000,000 so'm`}</del>
+              <del className="del-text1">{`2,000,000 so'm`}</del>
               <span className="card2-text2">{`400,000 so'm`}</span>
             </div>
           </div>
@@ -49,6 +49,15 @@ const Main = () => {
           <div className="main-card2-texts">
             <span className="imgcard-text1">{`Kamol To'ymurodov`}</span>
             <span className="imgcard-text2">Professional Targetolog</span>
+            <div className="card3-cards main-btns2">
+            <a href="#kurstarif" className="main-btn">
+              {`Ro'yhatdan o'tish`}
+            </a>
+            <span className="main-btn-text">
+              {`Ma’lumotlaringizni qoldirganingizdan so’ng mutaxasisslarimiz siz
+              bilan bog'lanishadi`}
+            </span>
+          </div>
           </div>
         </div>
       </div>
