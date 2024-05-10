@@ -8,11 +8,11 @@ import Tarif from "./Tarif/Tarif";
 const Home = () => {
   return (
     <>
-      {/* <Main />
+      <Main />
       <About />
       <Service />
       <Tarif />
-      <HomeCard /> */}
+      <HomeCard />
       <Faq />
     </>
   );

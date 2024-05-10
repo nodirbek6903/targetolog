@@ -17,3 +17,13 @@
     letter-spacing: 1px;
     font-weight: 600;
 }
+@media screen and (max-width:500px) {
+    .footer-text{
+        font-size: 15px;
+    }
+}
+@media screen and (max-width:400px) {
+    .footer-text{
+        font-size: 12px;
+    }
+}
