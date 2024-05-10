@@ -11,8 +11,8 @@ const Home = () => {
       {/* <Main /> */}
       {/* <About /> */}
       {/* <Service /> */}
-      <Tarif />
-      {/* <HomeCard /> */}
+      {/* <Tarif /> */}
+      <HomeCard />
       {/* <Faq /> */}
     </>
   );

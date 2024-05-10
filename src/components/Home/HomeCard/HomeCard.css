@@ -3,6 +3,7 @@
   margin: 0 auto;
   max-width: 1920px;
   margin-top: 70px;
+  margin-bottom: 30px;
 }
 .homecard {
   width: 80%;
@@ -174,4 +175,88 @@
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 1px;
+}
+
+@media screen and (max-width:1200px) {
+  .homecard-form{
+    width: 60%;
+  }
+}
+
+
+@media screen and (max-width:1000px) {
+  .homecard-title{
+    scale: 1;
+  }
+  .homecard-text{
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width:800px) {
+  .homecard-book,.homecard-bg,.homecard-phone{
+    display: none;
+  }
+  .homecard-form{
+    width: 80%;
+  }
+  .homecard-title{
+    font-size: 35px;
+  }
+  .homecard-text{
+    font-size: 16px;
+  }
+  .plastik-raqam{
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .homecard-form{
+    width: 100%;
+  }
+  .homecard-form label{
+    font-size: 16px;
+  }
+  .homecard-title{
+    font-size: 30px;
+  }
+  .homecard-btn{
+    font-size: 15px;
+  }
+  .plastik-raqam{
+    font-size: 25px;
+  }
+  .plastik-nusxa{
+    font-size: 8px;
+  }
+}
+@media screen and (max-width:500px) {
+  .homecard-title{
+    font-size: 25px;
+  }
+  .homecard{
+    border-radius: 10px;
+    width: 90%;
+  }
+  .plastik-raqam{
+    font-size: 20px;
+  }
+  .labels{
+    font-size: 18px;
+  }
+}
+@media screen and (max-width:400px) {
+  .homecard-title{
+    font-size: 20px;
+  }
+  .plastik-raqam{
+    font-size: 15px;
+  }
+  .plastik-nusxa{
+    font-size: 6px;
+  }
+  .labels{
+    font-size: 15px;
+  }
 }
