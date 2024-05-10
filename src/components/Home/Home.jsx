@@ -8,12 +8,12 @@ import Tarif from "./Tarif/Tarif";
 const Home = () => {
   return (
     <>
-      {/* <Main /> */}
-      {/* <About /> */}
-      {/* <Service /> */}
-      {/* <Tarif /> */}
-      <HomeCard />
-      {/* <Faq /> */}
+      {/* <Main />
+      <About />
+      <Service />
+      <Tarif />
+      <HomeCard /> */}
+      <Faq />
     </>
   );
 };
