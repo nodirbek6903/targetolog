@@ -17,7 +17,7 @@ const HomeCard = () => {
   const [openModal, setOpenModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const [isCopySuccess, setIsCopySuccess] = useState(false);
-  const [selectedCardNumber, setSelectedCardNumber] = useState(null);
+  const [selectedCardNumber, setSelectedCardNumber] = useState("tanlash"); // Initialize selectedCardNumber with "tanlash"
   const navigate = useNavigate();
 
   const sendTelegramBot = async () => {
@@ -29,7 +29,7 @@ const HomeCard = () => {
       message += `\n Karta raqami: 9860176606994307`;
     } else if (selectedCardNumber === "uzcard") {
       message += `\n Karta raqami: 8600140436177522`;
-    } else {
+    } else if (selectedCardNumber === "tanlash") {
       toast.error("Karta raqamini tanlang!");
       return false;
     }
@@ -51,7 +51,7 @@ const HomeCard = () => {
       );
 
       if (response.ok) {
-        console.log("Ishladi");
+        // console.log("Ishladi");
         setFirstName("");
         setPhone("");
         setSelectedTarif("");
@@ -69,17 +69,15 @@ const HomeCard = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (selectedImage && selectedCardNumber) {
-      sendTelegramBot();
-      navigate("/tolov");
-    } else if (selectedImage && !selectedCardNumber) {
-      toast.error("Karta raqamini tanlang!");
-      return false;
-    } else if (!selectedImage) {
-      toast.error("Skrenshotni yuklang!");
-      return false;
+    if (!selectedImage) {
+      toast.error("Skrenshotni yuklang");
     } else {
-      toast.error("Malumotlarni to'ldiring!");
+      if (selectedImage && selectedCardNumber !== "tanlash") {
+        sendTelegramBot();
+        navigate("/tolov");
+      } else {
+        toast.error("Karta raqamini tanlang!");
+      }
     }
   };
 
@@ -155,7 +153,12 @@ const HomeCard = () => {
                 onClick={(e) => {
                   e.preventDefault();
                   if (firstName && phone && selectedTarif) {
-                    setOpenModal(true);
+                    if (selectedTarif === "tanlash") {
+                      toast.error("Tarifni tanlang!");
+                      return false;
+                    } else {
+                      setOpenModal(true);
+                    }
                   } else {
                     toast.error("Barcha maydonlarni to'ldiring");
                   }

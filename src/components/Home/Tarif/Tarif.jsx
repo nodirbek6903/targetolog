@@ -42,7 +42,7 @@ const Tarif = () => {
       message += `\n Karta raqami: 9860176606994307`;
     } else if (selectedCardNumber === "uzcard") {
       message += `\n Karta raqami: 8600140436177522`;
-    } else {
+    } else if (selectedCardNumber === "tanlash") {
       toast.error("Karta raqamini tanlang!");
       return false;
     }
@@ -64,7 +64,7 @@ const Tarif = () => {
       );
 
       if (response.ok) {
-        console.log("Ishladi");
+        // console.log("Ishladi");
         setFirstName("");
         setPhone("");
         setSelectedTarif("");
@@ -79,20 +79,18 @@ const Tarif = () => {
       console.error("Error sending message:", error);
     }
   };
-// submit qismi
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (selectedImage && selectedCardNumber) {
-      sendTelegramBot();
-      navigate("/tolov");
-    } else if (selectedImage && !selectedCardNumber) {
-      toast.error("Karta raqamini tanlang!");
-      return false;
-    } else if (!selectedImage) {
-      toast.error("Skrenshotni yuklang!");
-      return false;
-    } else {
-      toast.error("Malumotlarni to'ldiring!");
+    if(!selectedImage){
+      toast.error("Skrenshotni yuklang")
+    }else{
+      if (selectedImage && selectedCardNumber !== "tanlash") {
+        sendTelegramBot();
+        navigate("/tolov");
+      } else {
+        toast.error("Karta raqamini tanlang!");
+      }
     }
   };
   // Humo karta raqamini nusxalash uchun funksiya
@@ -322,7 +320,6 @@ const Tarif = () => {
                     placeholder="Ismingiz"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
-                    
                     required
                   />
                   <PhoneInput
