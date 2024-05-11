@@ -2,10 +2,10 @@ import "./Service.css";
 import Img1 from "../../../assets/anhorpark.jpg";
 import Img2 from "../../../assets/Cosmo_aesthet.jpg";
 import Img3 from "../../../assets/ahadqayumshowman.jpg";
-import Img4 from "../../../assets/muallif4.png";
-import Img5 from "../../../assets/muallif5.png";
-import Img6 from "../../../assets/muallif6.png";
-import Img7 from "../../../assets/muallif7.png";
+import Img4 from "../../../assets/dermatologiya.jpg";
+// import Img5 from "../../../assets/muallif5.png";
+// import Img6 from "../../../assets/muallif6.png";
+import Img5 from "../../../assets/muallif7.png";
 import Imgcard from "../../../assets/Latipov1.jpg"
 import { BsFillPatchCheckFill } from "react-icons/bs";
 
@@ -48,25 +48,13 @@ const Service = () => {
                 <div className="ustoz-img">
                   <img src={Img4} alt="" />
                 </div>
-                <span className="ustoz-text">Elmobile</span>
+                <span className="ustoz-text">dermatology.uz</span>
               </div>
               <div className="ustoz">
                 <div className="ustoz-img">
                   <img src={Img5} alt="" />
                 </div>
-                <span className="ustoz-text">Naqshi</span>
-              </div>
-              <div className="ustoz">
-                <div className="ustoz-img">
-                  <img src={Img6} alt="" />
-                </div>
-                <span className="ustoz-text">Gamepoint</span>
-              </div>
-              <div className="ustoz">
-                <div className="ustoz-img">
-                  <img src={Img7} alt="" />
-                </div>
-                <span className="ustoz-text">Intelect school</span>
+                <span className="ustoz-text">Apple Nasiya</span>
               </div>
               <div className="ustoz">
                 <span className="loyihatext">50+ loyihalar</span>
