@@ -365,6 +365,12 @@
   .form-btn{
     font-size: 16px;
   }
+  .tarif-plastik-raqam{
+    font-size: 23px;
+  }
+  .tarif-plastik-nusxa{
+    font-size: 10px;
+  }
 }
 @media screen and (max-width:500px) {
   .tarif-cards{
@@ -394,6 +400,12 @@
   }
   .form-btn{
     font-size: 15px;
+  }
+  .tarif-plastik-raqam{
+    font-size: 17px;
+  }
+  .tarif-plastik-nusxa{
+    font-size: 8px;
   }
 }
 @media screen and (max-width:400px) {
