@@ -109,7 +109,7 @@ const HomeCard = () => {
           {!openModal ? (
             <>
               <label htmlFor="firstname" className="labels">
-                Firstname
+                Ism
               </label>
               <input
                 type="text"
@@ -120,7 +120,7 @@ const HomeCard = () => {
                 required
               />
               <label htmlFor="phonenumber" className="labels">
-                Phone Number
+                Telefon raqam
               </label>
               <PhoneInput
                 defaultCountry="UZ"
@@ -194,7 +194,7 @@ const HomeCard = () => {
                       <FaRegCopy className="plastik-icon" />
                     )}
                   </span>
-                  <span className="plastik-ism">{`Kamol To'ymurodov`}</span>
+                  <span className="plastik-ism">Izzatbek Latifov</span>
                 </>
               )}
               {selectedCardNumber === "uzcard" && (
@@ -207,12 +207,12 @@ const HomeCard = () => {
                       <FaRegCopy className="plastik-icon" />
                     )}
                   </span>
-                  <span className="plastik-ism">{`Kamol To'ymurodov`}</span>
+                  <span className="plastik-ism">Izzatbek Latifov</span>
                 </>
               )}
               <div className="raqam-label">
                 <label htmlFor="">
-                  Pul otkazilganligi skrenshotini joylang
+                  {`Pul o'tkazilganligi skrenshotini joylang`}
                 </label>
                 <input
                   type="file"
