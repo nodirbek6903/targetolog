@@ -3,10 +3,8 @@ import Img1 from "../../../assets/anhorpark.jpg";
 import Img2 from "../../../assets/Cosmo_aesthet.jpg";
 import Img3 from "../../../assets/ahadqayumshowman.jpg";
 import Img4 from "../../../assets/dermatologiya.jpg";
-// import Img5 from "../../../assets/muallif5.png";
-// import Img6 from "../../../assets/muallif6.png";
-import Img5 from "../../../assets/muallif7.png";
-import Imgcard from "../../../assets/Latipov1.jpg"
+import Img5 from "../../../assets/applenasiya.png";
+import Imgcard from "../../../assets/Latipov1.jpg";
 import { BsFillPatchCheckFill } from "react-icons/bs";
 
 const Service = () => {
@@ -72,7 +70,7 @@ const Service = () => {
               <div className="service-item">
                 <BsFillPatchCheckFill className="service-icon" />
                 <span className="service-item-text">
-                Applenasiya uzb ga 1 oyda 150,000$ savdo
+                  Applenasiya uzb ga 1 oyda 150,000$ savdo
                 </span>
               </div>
               <div className="service-item">
