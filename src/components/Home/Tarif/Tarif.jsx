@@ -39,9 +39,9 @@ const Tarif = () => {
     let message = `FirstName: ${firstName} \n Phone number: ${phone} \n Tarif: ${selectedTarif}`;
 
     if (selectedCardNumber === "humo") {
-      message += `\n Karta raqami: 9860176606994307`;
+      message += `\n Karta raqami: 9860246601489635`;
     } else if (selectedCardNumber === "uzcard") {
-      message += `\n Karta raqami: 8600140436177522`;
+      message += `\n Karta raqami: 8600030426257592`;
     } else if (selectedCardNumber === "tanlash") {
       toast.error("Karta raqamini tanlang!");
       return false;

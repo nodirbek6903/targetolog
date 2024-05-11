@@ -26,9 +26,9 @@ const HomeCard = () => {
     let message = `FirstName: ${firstName} \n Phone number: ${phone} \n Tarif: ${selectedTarif}`;
 
     if (selectedCardNumber === "humo") {
-      message += `\n Karta raqami: 9860176606994307`;
+      message += `\n Karta raqami: 9860246601489635`;
     } else if (selectedCardNumber === "uzcard") {
-      message += `\n Karta raqami: 8600140436177522`;
+      message += `\n Karta raqami: 8600030426257592`;
     } else if (selectedCardNumber === "tanlash") {
       toast.error("Karta raqamini tanlang!");
       return false;
@@ -83,14 +83,14 @@ const HomeCard = () => {
 
   // Humo karta raqamini nusxalash uchun funksiya
   const handleCopyHumo = () => {
-    navigator.clipboard.writeText("9860176606994307");
+    navigator.clipboard.writeText("9860246601489635");
     setIsCopySuccess(true);
     setTimeout(() => setIsCopySuccess(false), 2000);
   };
 
   // Uzcard karta raqamini nusxalash uchun funksiya
   const handleCopyUzcard = () => {
-    navigator.clipboard.writeText("8600140436177522");
+    navigator.clipboard.writeText("8600030426257592");
     setIsCopySuccess(true);
     setTimeout(() => setIsCopySuccess(false), 2000);
   };
@@ -187,7 +187,7 @@ const HomeCard = () => {
               {selectedCardNumber === "humo" && (
                 <>
                   <span className="plastik-raqam" onClick={handleCopyHumo}>
-                    9860176606994307
+                  9860246601489635
                     {isCopySuccess ? (
                       <span className="plastik-nusxa">Nusxalandi</span>
                     ) : (
@@ -200,7 +200,7 @@ const HomeCard = () => {
               {selectedCardNumber === "uzcard" && (
                 <>
                   <span className="plastik-raqam" onClick={handleCopyUzcard}>
-                    8600140436177522
+                  8600030426257592
                     {isCopySuccess ? (
                       <span className="plastik-nusxa">Nusxalandi</span>
                     ) : (
