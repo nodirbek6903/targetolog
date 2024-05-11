@@ -1,12 +1,12 @@
 import "./Service.css";
-import Img1 from "../../../assets/muallif1.png";
-import Img2 from "../../../assets/muallif2.png";
-import Img3 from "../../../assets/muallif3.png";
+import Img1 from "../../../assets/anhorpark.jpg";
+import Img2 from "../../../assets/Cosmo_aesthet.jpg";
+import Img3 from "../../../assets/ahadqayumshowman.jpg";
 import Img4 from "../../../assets/muallif4.png";
 import Img5 from "../../../assets/muallif5.png";
 import Img6 from "../../../assets/muallif6.png";
 import Img7 from "../../../assets/muallif7.png";
-import Imgcard from "../../../assets/asosiy.png"
+import Imgcard from "../../../assets/Latipov1.jpg"
 import { BsFillPatchCheckFill } from "react-icons/bs";
 
 const Service = () => {
@@ -16,10 +16,10 @@ const Service = () => {
         <div className="service-cards">
           <div className="service-card muallif-section">
             <div className="muallif">
-              <h2 className="service-title">Kamol</h2>
+              <h2 className="service-title">Izzatbek</h2>
               <span className="ser-muallif">Muallif haqida</span>
             </div>
-            <h2 className="service-title">{`To'ymurodov`}</h2>
+            <h2 className="service-title">{`Latifov`}</h2>
             <span className="service-kasb">Professional Targetolog</span>
             <div className="ser-hr">
               <span className="ser-loyiha">Loyihalar</span>
@@ -30,19 +30,19 @@ const Service = () => {
                 <div className="ustoz-img">
                   <img src={Img1} alt="" />
                 </div>
-                <span className="ustoz-text">Ibrahim Gulyamov</span>
+                <span className="ustoz-text">Anhorpark</span>
               </div>
               <div className="ustoz">
                 <div className="ustoz-img">
                   <img src={Img2} alt="" />
                 </div>
-                <span className="ustoz-text">{`Axrolxo'ja Rahmatxo'jayev`}</span>
+                <span className="ustoz-text">{`Cosmo Aesthet`}</span>
               </div>
               <div className="ustoz">
                 <div className="ustoz-img">
                   <img src={Img3} alt="" />
                 </div>
-                <span className="ustoz-text">Mahsulot</span>
+                <span className="ustoz-text">Ahad Qayum</span>
               </div>
               <div className="ustoz">
                 <div className="ustoz-img">
@@ -69,7 +69,7 @@ const Service = () => {
                 <span className="ustoz-text">Intelect school</span>
               </div>
               <div className="ustoz">
-                <span className="loyihatext">30+ loyihalar</span>
+                <span className="loyihatext">50+ loyihalar</span>
               </div>
             </div>
           </div>
@@ -78,25 +78,25 @@ const Service = () => {
               <div className="service-item">
                 <BsFillPatchCheckFill className="service-icon" />
                 <span className="service-item-text">
-                  2 yildan ortiq tajriba
+                  3 yildan ortiq tajriba
                 </span>
               </div>
               <div className="service-item">
                 <BsFillPatchCheckFill className="service-icon" />
                 <span className="service-item-text">
-                  @mahsulotcom da bir oyda 1 mlrd+ savdo
+                Applenasiya uzb ga 1 oyda 150,000$ savdo
                 </span>
               </div>
               <div className="service-item">
                 <BsFillPatchCheckFill className="service-icon" />
                 <span className="service-item-text">
-                  $400K reklamaga sarflangan byudjet
+                  $300K reklamaga sarflangan byudjet
                 </span>
               </div>
               <div className="service-item">
                 <BsFillPatchCheckFill className="service-icon" />
                 <span className="service-item-text">
-                  30 dan ortiq proyektlar
+                  50 dan ortiq proyektlar
                 </span>
               </div>
             </div>

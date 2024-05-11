@@ -95,14 +95,14 @@ const Tarif = () => {
   };
   // Humo karta raqamini nusxalash uchun funksiya
   const handleCopyHumo = () => {
-    navigator.clipboard.writeText("9860176606994307");
+    navigator.clipboard.writeText("9860246601489635");
     setIsCopySuccess(true);
     setTimeout(() => setIsCopySuccess(false), 2000);
   };
 
   // Uzcard karta raqamini nusxalash uchun funksiya
   const handleCopyUzcard = () => {
-    navigator.clipboard.writeText("8600140436177522");
+    navigator.clipboard.writeText("8600030426257592");
     setIsCopySuccess(true);
     setTimeout(() => setIsCopySuccess(false), 2000);
   };
@@ -211,9 +211,9 @@ const Tarif = () => {
                 </span>
               </div>
               <div className="tarif-btns">
-                <del className="del-text">{`9,000,000 so'm`}</del>
+                <del className="del-text">{`3,000,000 so'm`}</del>
                 <span className="btns-text1">
-                  5,000,000 <span className="uzs">{`so'm`}</span>
+                  1,000,000 <span className="uzs">{`so'm`}</span>
                 </span>
                 <button
                   onClick={() => handleOpenModal("premium")}
@@ -260,7 +260,7 @@ const Tarif = () => {
                         className="tarif-plastik-raqam"
                         onClick={handleCopyHumo}
                       >
-                        9860176606994307
+                        9860246601489635
                         {isCopySuccess ? (
                           <span className="tarif-plastik-nusxa">
                             Nusxalandi
@@ -269,7 +269,7 @@ const Tarif = () => {
                           <FaRegCopy className="tarif-plastik-icon" />
                         )}
                       </span>
-                      <span className="tarif-plastik-ism">{`Kamol To'ymurodov`}</span>
+                      <span className="tarif-plastik-ism">{`Latifov Izzatbek`}</span>
                     </>
                   )}
                   {selectedCardNumber === "uzcard" && (
@@ -278,7 +278,7 @@ const Tarif = () => {
                         className="tarif-plastik-raqam"
                         onClick={handleCopyUzcard}
                       >
-                        8600140436177522
+                        8600030426257592
                         {isCopySuccess ? (
                           <span className="tarif-plastik-nusxa">
                             Nusxalandi
@@ -287,7 +287,7 @@ const Tarif = () => {
                           <FaRegCopy className="tarif-plastik-icon" />
                         )}
                       </span>
-                      <span className="tarif-plastik-ism">{`Kamol To'ymurodov`}</span>
+                      <span className="tarif-plastik-ism">{`Latifov Izzatbek`}</span>
                     </>
                   )}
                   <div className="tarif-raqam-label">

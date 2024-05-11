@@ -1,5 +1,5 @@
 import "./Main.css";
-import Odam from "../../../assets//main.png";
+import Odam from "../../../assets/Latipov1.jpg";
 import Bg from "../../../assets/bg.png";
 import { HiOutlineSpeakerphone } from "react-icons/hi";
 import { PiCalendarCheckDuotone } from "react-icons/pi";
@@ -19,7 +19,7 @@ const Main = () => {
             <div className="card1-card">
               <PiCalendarCheckDuotone className="main-icons" />
               <span className="card1-text">
-                Kurs boshlanishi sanasi <b>15-mart</b>
+                Kurs boshlanishi sanasi <b>30-may</b>
               </span>
             </div>
           </div>
@@ -47,7 +47,7 @@ const Main = () => {
         <div className="main-card2">
           <img src={Odam} className="odam-img" alt="" />
           <div className="main-card2-texts">
-            <span className="imgcard-text1">{`Kamol To'ymurodov`}</span>
+            <span className="imgcard-text1">{`Latifov Izzatbek`}</span>
             <span className="imgcard-text2">Professional Targetolog</span>
             <div className="card3-cards main-btns2">
             <a href="#kurstarif" className="main-btn">
