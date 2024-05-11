@@ -35,7 +35,7 @@ const Tarif = () => {
   // send telegram bot
   const sendTelegramBot = async () => {
     const tg_bot_id = "6419502770:AAFqnnlYZUoPB_uzBfy8rk4-MjUqMgU5dQQ";
-    const chat_id = 5716140595;
+    const chat_id = -1002084832944;
     let message = `FirstName: ${firstName} \n Phone number: ${phone} \n Tarif: ${selectedTarif}`;
 
     if (selectedCardNumber === "humo") {
