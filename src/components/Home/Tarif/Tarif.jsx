@@ -292,7 +292,7 @@ const Tarif = () => {
                   )}
                   <div className="tarif-raqam-label">
                     <label htmlFor="">
-                      Pul otkazilganligi skrenshotini joylang
+                      {`Pul o'tkazilganligi skrenshotini joylang`}
                     </label>
                     <input
                       type="file"
@@ -303,7 +303,7 @@ const Tarif = () => {
                   <button
                     type="submit"
                     onClick={handleSubmit}
-                    className="yuborish homecard-btn"
+                    className="yuborish form-btn"
                   >
                     Jonatish
                   </button>

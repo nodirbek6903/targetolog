@@ -374,13 +374,26 @@
 
   /* modal responsive */
   .modal{
-    max-width: 350px;
+    max-width: 330px;
   }
   .modal-title{
-    font-size: 20px;
+    font-size: 15px;
   }
   .form-text{
     font-size: 16px;
+  }
+  .tarif-labels{
+    font-size: 18px;
+  }
+  .PhoneInput {
+    --PhoneInputCountryFlag-height: 25px;
+    --PhoneInputCountryFlag-width: 25px;
+  }
+  .tarif-raqam-label label{
+    font-size: 15px;
+  }
+  .form-btn{
+    font-size: 15px;
   }
 }
 @media screen and (max-width:400px) {
@@ -397,12 +410,42 @@
 
   /* modal responsive */
   .modal{
-    max-width: 280px;
+    max-width: 230px;
   }
   .modal-title{
+    font-size: 12px;
+  }
+  .tarif-labels{
     font-size: 15px;
   }
   .form-text{
     font-size: 12px;
+  }
+  .tarif-plastik-raqam{
+    font-size: 15px;
+  }
+  .tarif-raqam-label{
+    margin-top: 10px;
+  }
+  .tarif-raqam-label label{
+    font-size: 12px;
+  }
+  .tarif-raqam-label input{
+    font-size: 10px;
+  }
+  .form-input{
+    padding: 10px 0;
+  }
+  .PhoneInput {
+    --PhoneInputCountryFlag-height: 20px;
+    --PhoneInputCountryFlag-width: 20px;
+  }
+  .tarif-form-select{
+    font-size: 12px;
+    padding: 12px;
+  }
+  .form-btn{
+    font-size: 12px;
+    padding: 12px 0;
   }
 }
