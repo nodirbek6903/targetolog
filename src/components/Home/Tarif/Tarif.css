@@ -422,7 +422,7 @@
 
   /* modal responsive */
   .modal{
-    max-width: 230px;
+    max-width: 280px;
   }
   .modal-title{
     font-size: 12px;
@@ -459,5 +459,17 @@
   .form-btn{
     font-size: 12px;
     padding: 12px 0;
+  }
+}
+@media screen and (max-width:350px) {
+  .modal{
+    max-width: 250px;
+    min-height: 350px;
+  }
+  .form-input{
+    padding: 10px;
+  }
+  .form-input::placeholder{
+    font-size: 15px;
   }
 }
