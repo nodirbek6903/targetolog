@@ -179,7 +179,7 @@ const Tarif = () => {
                 </span>
                 <span className="tarif-item">
                   <BsFillPatchCheckFill className="tarif-icon" />{" "}
-                  <b>Kamol Targetolog</b> bilan offlayn dars
+                  <b>Izzatbek Targetolog</b> bilan offlayn dars
                 </span>
                 <span className="tarif-item">
                   <BsFillPatchCheckFill className="tarif-icon" /> Yopiq guruhda
@@ -203,7 +203,7 @@ const Tarif = () => {
                 </span>
                 <span className="tarif-item">
                   <BsFillPatchCheckFill className="tarif-icon" />{" "}
-                  <b>Kamol Targetologdan</b> individual yordam
+                  <b>Izzatbek Targetologdan</b> individual yordam
                 </span>
                 <span className="tarif-item">
                   <BsFillPatchCheckFill className="tarif-icon" /> <b>BONUS</b>{" "}

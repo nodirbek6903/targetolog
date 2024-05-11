@@ -14,10 +14,10 @@ const Service = () => {
         <div className="service-cards">
           <div className="service-card muallif-section">
             <div className="muallif">
-              <h2 className="service-title">Izzatbek</h2>
+              <h2 className="service-title">Latifov</h2>
               <span className="ser-muallif">Muallif haqida</span>
             </div>
-            <h2 className="service-title">{`Latifov`}</h2>
+            <h2 className="service-title">Izzatbek</h2>
             <span className="service-kasb">Professional Targetolog</span>
             <div className="ser-hr">
               <span className="ser-loyiha">Loyihalar</span>
